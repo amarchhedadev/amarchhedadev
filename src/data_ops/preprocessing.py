@@ -1,0 +1,1 @@
+import pandas as pd\nimport re\n\ndef clean_text_data(text):\n    text = re.sub(r'[^a-zA-Z\s]', '', text)\n    return text.lower().strip()\n\ndef batch_process_corpus(df, col_name):\n    df[col_name] = df[col_name].apply(clean_text_data)\n    return df
